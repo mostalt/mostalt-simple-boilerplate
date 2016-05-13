@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="description" content="")
+    meta(name="keywords" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='shortcut icon' type='image/x-icon' href='/assets/img/favicons/favicon.ico')
+    link(rel='apple-touch-icon-precomposed' sizes='57x57' href='/assets/img/favicons/57.png')
+    link(rel='apple-touch-icon-precomposed' sizes='76x76' href='/assets/img/favicons/76.png')
+    link(rel='apple-touch-icon-precomposed' sizes='120x120' href='/assets/img/favicons/120.png')
+    link(rel='apple-touch-icon-precomposed' sizes='152x152' href='/assets/img/favicons/152.png')
+    link(rel='apple-touch-icon-precomposed' sizes='180x180' href='/assets/img/favicons/180.png')
+    link(rel='icon' sizes='192x192' href='/assets/img/favicons/192.png')
+    link(rel='stylesheet' href="/assets/css/app.min.css")
+    script(src="/assets/vendor/svg4everybody.legacy.min.js")
+    script.
+      svg4everybody();
+    block title
+      title Document
+  body
+    block page-wrapper
+      div(block="page-wrapper")
+
+        block header
+          include page-header
+        block page-content
+          main(block="page-content")
+            h1 HEY, BRO!
+
+        block page-footer
+          include page-footer
+    script(src="/assets/js/scripts.min.js")
+    script.
+      svg4everybody();
+

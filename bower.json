@@ -1,0 +1,22 @@
+{
+  "name": "frontend-tepmplate",
+  "version": "1.0.0",
+  "authors": [
+    "mostalt <mostigalt1992@gmail.com>"
+  ],
+  "description": "Frontend libs for my-projects.",
+  "license": "MIT",
+  "keywords": [
+    "my",
+    "awesome",
+    "frontend",
+    "template",
+    "for you",
+    "by mostalt"
+  ],
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}
