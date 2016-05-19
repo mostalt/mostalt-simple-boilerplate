@@ -104,6 +104,89 @@ svg
 Стили иконок спрайта храняться в `frontend/styles/global/sprite.styl`
 Пример лежит `frontend/sprite.symbol.html`
 
+## Как собираются и используются PNG спрайты
+
+В шаблоне предусмотрена сборка нескольких PNG спрайтов и их данных в CSS переменные.
+
+### Добавление PNG иконок
+
+Для создания спрайта нужно добавить папку в `app/sprites` и в неё PNG иконки. Важно, чтобы иконки были с чётными высотой и шириной кратными двум. Retina иконки добавлять в эту папку рядом с обычными и в конце названия файла добавить `@2x`, например:
+```
+└── frontend/
+    └── sprites/
+        └── emoji/
+            ├── grinning.png
+            ├── grinning@2x.png
+            ├── joy.png
+            ├── joy@2x.png
+            ├── smile.png
+            └── smile@2x.png
+```
+
+### Сборка спрайта
+
+* В папке `dist/assets/images/sprites` появятся два спрайта: обычный и Retina с `@2x` и в `app/styles/sprites` один стилевой файл с примесями. Все файлы будут с такими же названиями, как у папки, в которой находятся его иконки. Например:
+```
+├── frontend/
+│    └── styles/
+│       └── sprites/
+│           └── emoji.styl
+└── public_html/
+    └── assets/
+        └── img/
+            └── sprites/
+                ├── emoji.png
+                └── emoji@2x.png
+
+```
+
+* В сборочных папках останутся только актуальные спрайты и стили в случае, если удалить исходные папки с иконками.
+
+### Использование png-спрайтов
+
+#### Retina спрайты
+
+Для подключения иконки используется примесь `retinaSprite` со значением `$icon_group`, где `icon` это название PNG иконки, например:
+```css
+.joy
+    retinaSprite $joy_group
+```
+
+В собранном виде в CSS добавятся обычный спрайт и медиа-запрос, чтобы отображать Retina спрайт только при необходимости и это будет выглядеть так:
+```css
+.joy {
+    background-image: url("../images/sprites/emoji.png");
+    background-position: 32px 0px;
+    width: 24px;
+    height: 24px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .joy {
+        background-image: url("../images/sprites/emoji@2x.png");
+        background-size: 88px 24px;
+    }
+}
+```
+
+#### Обычные спрайты
+
+Для подключения иконки используется примесь `sprite` со значением `$icon`, где `icon` это название PNG иконки, например:
+```css
+.joy
+    sprite $joy
+```
+
+В собранном виде в CSS добавится только обычный спрайт и это будет выглядеть так:
+```css
+.joy {
+    background-image: url("../images/sprites/emoji.png");
+    background-position: 32px 0px;
+    width: 24px;
+    height: 24px;
+}
+```
+
 
 ## Other gulp tasks
 

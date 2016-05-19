@@ -46,6 +46,7 @@
     "gulp-typograf": "^1.0.5",
     "gulp-uglify": "^1.2.0",
     "gulp-watch": "^4.3.4",
+    "gulp.spritesmith-multi": "^3.0.0",
     "imagemin-pngquant": "^4.2.2",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
@@ -54,6 +55,8 @@
     "path": "^0.12.7",
     "postcss-assets": "^2.1.2",
     "posthtml-bem": "^0.2.2",
+    "spritesmith-dir-checker": "^1.0.0",
+    "spritesmith-stylus-retina-template": "^1.0.0",
     "stylus": "^0.52.0"
   }
 }
