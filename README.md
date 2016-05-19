@@ -1,4 +1,4 @@
-# mostalt Simple Boilerplate
+# mostalt simple boilerplate
 
 Базовый шаблон для проектов. Буду рад замечаниям и предложениям по улучшению сборки.
 
